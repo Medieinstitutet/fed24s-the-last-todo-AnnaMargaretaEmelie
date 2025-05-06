@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Todo } from "./models/Todo";
 
 import "./App.css";
+import { TodoList } from "./components/TodoList";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([
@@ -24,6 +25,19 @@ function App() {
     <>
       <div>
         <h1>Family todos</h1>
+        <TodoList
+          todos={todos}
+          toggleDone={(id) =>
+            setTodos((todos) =>
+              todos.map((todo) =>
+                todo.id === id ? { ...todo, done: !todo.done } : todo
+              )
+            )
+          }
+          deleteTodo={(id) =>
+            setTodos((todos) => todos.filter((todo) => todo.id !== id))
+          }
+        ></TodoList>
       </div>
     </>
   );
