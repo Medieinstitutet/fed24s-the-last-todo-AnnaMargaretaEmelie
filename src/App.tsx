@@ -3,6 +3,7 @@ import { Todo } from "./models/Todo";
 
 import "./App.css";
 import { TodoList } from "./components/TodoList";
+import { AddTodoForm } from "./components/AddTodoForm";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([
@@ -21,10 +22,14 @@ function App() {
       priority: 1,
     },
   ]);
+  const addTodo = (newTodo: Todo) => {
+    setTodos((todos) => [...todos, newTodo]);
+  };
   return (
     <>
       <div>
         <h1>Family todos</h1>
+        <AddTodoForm addTodo={addTodo} />
         <TodoList
           todos={todos}
           toggleDone={(id) =>
