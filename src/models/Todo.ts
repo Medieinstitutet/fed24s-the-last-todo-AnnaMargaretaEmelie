@@ -3,6 +3,6 @@ export type Todo = {
     text: string;
     done: boolean;
     category: string;
-    dueDate: Date;
+    dueDate?: Date;
     priority: number;
 }
