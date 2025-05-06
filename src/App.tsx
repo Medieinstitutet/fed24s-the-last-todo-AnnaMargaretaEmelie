@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Todo } from "./models/Todo";
-
 import "./App.css";
+import { SortButtons } from "./components/SortButtons";
 import { TodoList } from "./components/TodoList";
 import { AddTodoForm } from "./components/AddTodoForm";
 
@@ -25,11 +25,24 @@ function App() {
   const addTodo = (newTodo: Todo) => {
     setTodos((todos) => [...todos, newTodo]);
   };
+
+  const sortByPriority = () => {
+    setTodos([...todos].sort((a, b) => a.priority - b.priority));
+  };
+
+  const sortByCategory = () => {
+    setTodos([...todos].sort((a, b) => a.category.localeCompare(b.category)));
+  };
+
   return (
     <>
       <div>
         <h1>Family todos</h1>
         <AddTodoForm addTodo={addTodo} />
+        <SortButtons
+          sortByPriority={sortByPriority}
+          sortByCategory={sortByCategory}
+        ></SortButtons>
         <TodoList
           todos={todos}
           toggleDone={(id) =>
