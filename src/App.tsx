@@ -36,26 +36,30 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1 className="text-7xl mb-5">Family todos</h1>
-        <AddTodoForm addTodo={addTodo} />
-        <SortButtons
-          sortByPriority={sortByPriority}
-          sortByCategory={sortByCategory}
-        ></SortButtons>
-        <TodoList
-          todos={todos}
-          toggleDone={(id) =>
-            setTodos((todos) =>
-              todos.map((todo) =>
-                todo.id === id ? { ...todo, done: !todo.done } : todo
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 py-10 px-4">
+        <div className="max-w-2xl mx-auto bg-white shadow-md rounded-xl p-6 space-y-6">
+          <h1 className="text-7xl mb-5 font-bold text-center text-blue-700">
+            Family todos
+          </h1>
+          <AddTodoForm addTodo={addTodo} />
+          <SortButtons
+            sortByPriority={sortByPriority}
+            sortByCategory={sortByCategory}
+          ></SortButtons>
+          <TodoList
+            todos={todos}
+            toggleDone={(id) =>
+              setTodos((todos) =>
+                todos.map((todo) =>
+                  todo.id === id ? { ...todo, done: !todo.done } : todo
+                )
               )
-            )
-          }
-          deleteTodo={(id) =>
-            setTodos((todos) => todos.filter((todo) => todo.id !== id))
-          }
-        ></TodoList>
+            }
+            deleteTodo={(id) =>
+              setTodos((todos) => todos.filter((todo) => todo.id !== id))
+            }
+          ></TodoList>
+        </div>
       </div>
     </>
   );
