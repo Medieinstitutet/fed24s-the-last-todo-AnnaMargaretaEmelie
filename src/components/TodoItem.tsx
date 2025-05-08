@@ -15,25 +15,25 @@ export function TodoItem({ todo, toggleDone, deleteTodo }: TodoProps) {
           ? "bg-green-50 text-gray-500 line-through"
           : "bg-white text-gray-900"
       }`}
-      onClick={() => toggleDone(todo.id)}
     >
-      <div className="flex items-center gap-4">
-        <button
-          onClick={() => toggleDone(todo.id)}
-          className={`w-6 h-6 flex items-center justify-center border-2 rounded-full ${
+      <button
+        onClick={() => toggleDone(todo.id)}
+        className="flex items-center gap-4 text-left group"
+      >
+        <span
+          className={`w-6 h-6 flex items-center justify-center border-2 rounded-full shrink-0 ${
             todo.done ? "bg-green-400 border-green-400" : "border-gray-400"
           }`}
-          aria-label="Klar"
         >
           {todo.done && <Check size={16} className="text-white" />}
-        </button>
-        <div>
+        </span>
+        <span>
           <p className="font-medium">{todo.text}</p>
           <div className="text-sm text-gray-500">
             {todo.category} • Prioritet: {todo.priority}
           </div>
-        </div>
-      </div>
+        </span>
+      </button>
 
       <button
         onClick={(e) => {

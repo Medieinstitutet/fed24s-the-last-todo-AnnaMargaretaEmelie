@@ -7,7 +7,7 @@ type TodoProps = {
 
 export function AddTodoForm({ addTodo }: TodoProps) {
   const [text, setText] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Vem som helst");
   const [priority, setPriority] = useState(1);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -26,7 +26,7 @@ export function AddTodoForm({ addTodo }: TodoProps) {
     addTodo(newTodo);
 
     setText("");
-    setCategory("");
+    setCategory("Vem som helst");
     setPriority(1);
   };
 
