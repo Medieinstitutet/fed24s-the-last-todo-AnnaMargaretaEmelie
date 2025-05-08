@@ -36,6 +36,9 @@ function App() {
 
   return (
     <>
+      <div className="text-2xl font-bold text-purple-600 p-4">
+        🚀 Tailwind fungerar!
+      </div>
       <div>
         <h1>Family todos</h1>
         <AddTodoForm addTodo={addTodo} />
