@@ -11,12 +11,13 @@ export function TodoList({ todos, toggleDone, deleteTodo }: TodoProps) {
   const showTodos = (
     text: string,
     todosToShow: Todo[],
-    emptyMessage: string
+    emptyMessage: string,
+    colorClass: string
   ) => (
-    <section>
-      <h2>{text}</h2>
+    <section className="mb-10">
+      <h2 className={`text-xl font-semibold mb-4 ${colorClass}`}>{text}</h2>
       {todosToShow.length > 0 ? (
-        <ul>
+        <ul className="space-y-3">
           {todosToShow.map((todo) => (
             <TodoItem
               key={todo.id}
@@ -27,7 +28,7 @@ export function TodoList({ todos, toggleDone, deleteTodo }: TodoProps) {
           ))}
         </ul>
       ) : (
-        <p>{emptyMessage}</p>
+        <p className="text-gray-500 italic">{emptyMessage}</p>
       )}
     </section>
   );
@@ -37,9 +38,19 @@ export function TodoList({ todos, toggleDone, deleteTodo }: TodoProps) {
 
   return (
     <>
-      <div>
-        {showTodos("Att göra", activeTodos, "Inga uppgifter kvar att göra!")}
-        {showTodos("Klara", completedTodos, "Inga klara uppgifter än")}
+      <div className="space-y-8">
+        {showTodos(
+          "Att göra",
+          activeTodos,
+          "Inga uppgifter kvar att göra!",
+          "text-blue-700"
+        )}
+        {showTodos(
+          "Klara",
+          completedTodos,
+          "Inga klara uppgifter än",
+          "text-green-700"
+        )}
       </div>
     </>
   );
