@@ -36,11 +36,8 @@ function App() {
 
   return (
     <>
-      <div className="text-2xl font-bold text-purple-600 p-4">
-        🚀 Tailwind fungerar!
-      </div>
       <div>
-        <h1>Family todos</h1>
+        <h1 className="text-7xl mb-5">Family todos</h1>
         <AddTodoForm addTodo={addTodo} />
         <SortButtons
           sortByPriority={sortByPriority}
