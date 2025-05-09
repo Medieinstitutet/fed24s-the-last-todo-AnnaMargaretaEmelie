@@ -10,10 +10,10 @@ type TodoProps = {
 export function TodoItem({ todo, toggleDone, deleteTodo }: TodoProps) {
   return (
     <li
-      className={`flex items-center justify-between p-4 rounded-md shadow-sm border ${
+      className={`flex items-center justify-between p-4 rounded-md shadow-sm border-gray-50 ${
         todo.done
-          ? "bg-green-50 text-gray-500 line-through"
-          : "bg-white text-gray-900"
+          ? "bg-green-800/10 text-gray-500 line-through"
+          : "bg-amber-100 text-gray-900"
       }`}
     >
       <button
@@ -22,7 +22,7 @@ export function TodoItem({ todo, toggleDone, deleteTodo }: TodoProps) {
       >
         <span
           className={`w-6 h-6 flex items-center justify-center border-2 rounded-full shrink-0 ${
-            todo.done ? "bg-green-400 border-green-400" : "border-gray-400"
+            todo.done ? "bg-lime-700 border-lime-700" : "border-amber-700"
           }`}
         >
           {todo.done && <Check size={16} className="text-white" />}
@@ -40,7 +40,7 @@ export function TodoItem({ todo, toggleDone, deleteTodo }: TodoProps) {
           e.stopPropagation();
           deleteTodo(todo.id);
         }}
-        className="text-red-500 hover:text-red-700"
+        className="text-red-800 hover:text-red-800"
         aria-label="Ta bort"
       >
         <Trash2 size={20} />

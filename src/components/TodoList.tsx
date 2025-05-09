@@ -43,13 +43,13 @@ export function TodoList({ todos, toggleDone, deleteTodo }: TodoProps) {
           "Att göra",
           activeTodos,
           "Inga uppgifter kvar att göra!",
-          "text-blue-700"
+          "text-orange-800"
         )}
         {showTodos(
           "Klara",
           completedTodos,
           "Inga klara uppgifter än",
-          "text-green-700"
+          "text-lime-800"
         )}
       </div>
     </>

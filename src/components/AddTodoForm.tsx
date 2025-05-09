@@ -33,7 +33,7 @@ export function AddTodoForm({ addTodo }: TodoProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white shadow rounded-lg p-4 flex flex-col mb-3 md:flex-row items-stretch md:items-end gap-4"
+      className="bg-orange-50 shadow rounded-lg p-5 flex flex-col mb-10 md:flex-row items-stretch md:items-end gap-4"
     >
       <div className="flex-1">
         <label
@@ -48,7 +48,7 @@ export function AddTodoForm({ addTodo }: TodoProps) {
           placeholder="Vad ska göras?"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full border border-amber-800 rounded bg-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-800"
         />
       </div>
       <div>
@@ -62,7 +62,7 @@ export function AddTodoForm({ addTodo }: TodoProps) {
           id="category"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="border border-gray-300 rounded px-3 py-2 bg-white"
+          className="border border-amber-800 rounded px-3 py-2 bg-white"
         >
           <option>Anna</option>
           <option>Fredrik</option>
@@ -70,13 +70,6 @@ export function AddTodoForm({ addTodo }: TodoProps) {
           <option>Hjördis</option>
           <option>Vem som helst</option>
         </select>
-        {/* <input
-          type="text"
-          id="category"
-          placeholder="Vem är ansvarig?"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        /> */}
       </div>
 
       <div>
@@ -93,13 +86,13 @@ export function AddTodoForm({ addTodo }: TodoProps) {
           max={5}
           value={priority}
           onChange={(e) => setPriority(Number(e.target.value))}
-          className="border border-gray-300 rounded px-3 py-2 bg-white"
+          className="border border-amber-800 rounded px-3 py-2 bg-white"
         />
       </div>
 
       <button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+        className="bg-lime-900 text-white px-4 py-2 rounded hover:bg-lime-950 transition shadow"
       >
         Lägg till
       </button>

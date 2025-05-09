@@ -1,3 +1,5 @@
+import { ArrowDown } from "lucide-react";
+
 type SortProps = {
   sortByPriority: () => void;
   sortByCategory: () => void;
@@ -5,18 +7,20 @@ type SortProps = {
 
 export function SortButtons({ sortByPriority, sortByCategory }: SortProps) {
   return (
-    <div className="flex gap-4 mb-6">
+    <div className="flex justify-end gap-4 mb-3">
       <button
         onClick={sortByPriority}
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+        className="bg-amber-700 text-white text-sm px-4 py-2 rounded hover:bg-amber-800 transition"
       >
-        Sortera efter prioritet
+        <ArrowDown size={16} className="inline-flex mr-1" />
+        Prioritet
       </button>
       <button
         onClick={sortByCategory}
-        className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition"
+        className="bg-yellow-600 text-white text-sm px-4 py-2 rounded hover:bg-yellow-700 transition"
       >
-        Sortera efter ansvarig
+        <ArrowDown size={16} className="inline-flex mr-1" />
+        Ansvarig
       </button>
     </div>
   );
